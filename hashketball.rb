@@ -1,4 +1,4 @@
-# require "pry"
+require "pry"
 
 def game_hash 
   game_hash = {
@@ -134,10 +134,10 @@ def num_points_scored(name)
       end 
     end 
   end 
-score.join.to_i
+score[0]
 end 
- name = "Alan Anderson"
- num_points_scored(name)
+# name = "Alan Anderson"
+# num_points_scored(name)
 
 def shoe_size(name)
   size = []
@@ -237,9 +237,11 @@ counter = 0
 player = ""
     game_hash.each do |key, value|
       value.each do |attribute, info|
+        binding.pry
         if attribute == :players
           info.each do |a, b|
           # puts "#{a}"
+             binding.pry
             if b[:points] > counter
               counter = b[:points]
             player = a
@@ -250,3 +252,29 @@ player = ""
   end
 player
 end 
+
+most_points_scored
+
+# def player_by_number(num)
+#   player = ""
+#   game_hash.each do |key, value|
+#     value.each do |attribute, info|
+#       attribute[:players].each do ||
+#       # # if attribute == :players
+#       #   info.each do |a, b|
+#       info[:numbers] == num
+#           #     binding.pry
+#           # if b == num 
+#           #   player = attribute[:players]
+#           b.each do |c, d|
+#             if d == num && c == :number
+#               player = a
+#             end
+#           end 
+#           end 
+#         end 
+#       end 
+#     end
+#   player
+# end
+# puts player_by_number(12)
